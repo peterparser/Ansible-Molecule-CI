@@ -5,9 +5,9 @@ driver:
   name: podman
 platforms:
   - name: instance
-    image: docker.io/pycontribs/centos:8
+    image: geerlingguy/docker-${MOLECULE_DISTRO:-centos8}-ansible:latest 
     pre_build_image: true
-    command: /sbin/init
+    command: ${MOLECULE_DOCKER_COMMAND:-"/sbin/init"}
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
