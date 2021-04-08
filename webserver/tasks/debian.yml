@@ -9,7 +9,7 @@
   replace:
     regexp: "^Listen 80$"
     replace: "Listen 8080"
-    path: /etc/apache2/apache2.conf
+    path: /etc/apache2/ports.conf
 
 
 - name: Start httpd
@@ -17,7 +17,6 @@
     name: apache2
     state: started
     enabled: yes
-
 
 - name: Deploy content
   copy:
