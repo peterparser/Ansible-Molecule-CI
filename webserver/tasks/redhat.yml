@@ -1,0 +1,35 @@
+---
+- name: Install httpd package
+  yum:
+    name: httpd
+    state: present
+
+- name: Replace port 80
+  replace:
+    regexp: "Listen 80"
+    replace: "Listen 8080"
+    path: /etc/httpd/conf/httpd.conf
+
+- name: Start httpd and enable
+  service:
+    name: httpd
+    state: started
+    enabled: yes
+
+- name: Ensure firewalld is installed
+  yum:
+    name: firewalld
+    state: present
+
+- name: Ensure firewalld enabled
+  service:
+    name: firewalld
+    state: started
+    enabled: yes
+
+- name: Ensure port 8080/tcp is open
+  firewalld:
+    port: 8080/tcp
+    permanent: yes
+    immediate: yes
+    state: enabled
