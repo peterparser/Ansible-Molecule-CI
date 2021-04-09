@@ -32,7 +32,7 @@
             python-version: '3.x'
         
         - name: Install molecule dependencies
-          run: pip3 install ansible molecule[podman] podman
+          run: pip3 install ansible molecule[docker] docker
 
         - name: Run molecule test
           run: molecule test

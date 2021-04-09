@@ -2,13 +2,12 @@
 dependency:
   name: galaxy
 driver:
-  name: podman
+  name: docker
 platforms:
   - name: instance
     image: geerlingguy/docker-${MOLECULE_DISTRO:-centos8}-ansible:latest 
     pre_build_image: true
-    command: /sbin/init
-    systemd: yes
+    command: ""
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     tmpfs:
