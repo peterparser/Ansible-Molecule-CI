@@ -3,7 +3,7 @@
   apt:
     name: apache2
     state: present
-    update_cache: yes
+    update_cache: true
 
 - name: Change apache 2 default port
   replace:
@@ -16,7 +16,7 @@
   service:
     name: apache2
     state: started
-    enabled: yes
+    enabled: true
 
 - name: Deploy content
   copy:
