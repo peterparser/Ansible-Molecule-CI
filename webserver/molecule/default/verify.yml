@@ -15,5 +15,5 @@
     - name: Check content
       assert:
         that:
-          - content.content == "Hello this is a test"
+          - content.content == "Hello this is not a test"
           - content.status == 200
