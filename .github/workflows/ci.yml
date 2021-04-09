@@ -25,6 +25,9 @@
           uses: actions/checkout@v2
           with:
             path: 'Ansible-Molecule-CI'
+        
+        - name: start dbus
+          run: /etc/init.d/dbus start
 
         - name: Set up python3
           uses: actions/setup-python@v2
