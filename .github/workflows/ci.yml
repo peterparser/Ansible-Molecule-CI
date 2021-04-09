@@ -7,7 +7,7 @@
   
   defaults:
     run:
-    working-directory: Ansible-Molecule-CI
+      working-directory: 'Ansible-Molecule-CI'
 
 
   jobs:
