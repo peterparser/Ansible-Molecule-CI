@@ -1,9 +1,9 @@
 ---
-name: my-CI
-'on':
-  push:
-    branches:
-      - main
+  name: my-CI
+  'on':
+    push:
+      branches:
+        - main
   
   defaults:
     run:
